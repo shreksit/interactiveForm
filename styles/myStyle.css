@@ -1,0 +1,178 @@
+﻿body {
+    direction: rtl;
+    font-size: 16px; /* הגדרת גודל גופן מתאים */
+    font-family: 'Rubik', sans-serif; /* שימוש בפונט Rubik */
+}
+
+#container {
+    display: flex;
+    align-items: flex-start; /* מיושר לראש הדף */
+    justify-content: space-between; /* מרווח בין הטופס לתמונות */
+}
+
+.form-group {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e0f7fa; /* צבע תכלת */
+    width: fit-content;
+}
+
+    .form-group label {
+        margin-right: 10px; /* מרווח ימני לתוויות */
+        white-space: nowrap; /* לשמור על התוויות באותו שורה */
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+        flex-grow: 1;
+        width: auto;
+        max-width: 200px; /* הגדרת רוחב מקסימלי */
+    }
+
+    .form-group .input-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px; /* מרווח בין הבחירות */
+    }
+
+        .form-group .input-container input[type="radio"],
+        .form-group .input-container input[type="checkbox"] {
+            margin-left: 5px; /* קרוב יותר לתוויות */
+        }
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* מיושר לימין */
+}
+
+#selection {
+    clear: both;
+    margin-top: 20px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    padding: 15px;
+    display: none; /* מוסתר בהתחלה */
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* הגדרת רוחב מקסימלי */
+    max-width: 400px; /* רוחב הקוביה */
+}
+
+textarea {
+    width: auto; /* התאמת רוחב התיבה */
+    max-width: 200px; /* הגדרת רוחב מקסימלי */
+}
+
+.image-container {
+    width: 50%; /* הגדרת רוחב לריבוע */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* הצמדה לשמאל */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #e0f7fa; /* צבע תכלת */
+    margin-top: 0; /* הסרת רווח מלמעלה */
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 100%; /* הגדרת רוחב מקסימלי */
+}
+
+.image-container img {
+    filter: brightness(50%);
+    margin: 5px;
+    width: 40px; /* הקטנת התמונות */
+    height: auto;
+    border: none; /* הסרת קווי מתאר */
+}
+
+    .image-container img.selected {
+        filter: brightness(100%);
+    }
+
+/* Popup styles */
+.popup {
+    display: none; /* מוסתר בהתחלה */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative; /* Position relative to place the close button correctly */
+}
+
+.close {
+    color: #aaa;
+    position: absolute; /* Position the close button absolutely */
+    right: 10px; /* Align to the right */
+    top: 10px; /* Align to the top */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.submit-button {
+    background-color: #4CAF50; /* צבע ירוק */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 12px; /* פינות מעוגלות */
+    opacity: 0.5; /* האטימות של הכפתור כשהוא מושבת */
+}
+
+    .submit-button:enabled {
+        opacity: 1; /* האטימות של הכפתור כשהוא פעיל */
+    }
+
+
+/* Additional Styles */
+.form-group.horizontal-radio,
+.form-group.horizontal-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .form-group.horizontal-radio .input-container,
+    .form-group.horizontal-checkbox .input-container {
+        margin: 0 10px 0 0; /* מרווח בין הבחירות */
+    }
+
+.required {
+    color: red;
+}
